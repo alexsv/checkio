@@ -43,6 +43,11 @@ def checkio(inset):
         return 0
 
     def solve_4(inset):
+        a, b, c, d = sorted(inset)
+        ra, rb, rc, rd = map(get_row, [a, b, c, d])
+        if ra == rb and rc == rd and rc > ra and b - a > 0 and b - a == d - c:
+            # check verticals
+        # check rombe
         return 0
 
     def solve_6(inset):
@@ -53,7 +58,7 @@ def checkio(inset):
         if ra == rb and rc == rd and re == rf
            and ra < rc < rf and ab > 0
            and ef == ab and cd == 2 * ab
-           and c - a == ra:
+           and c - a == sum(range(ra, rc)):
             return 6
         else:
             return 0
